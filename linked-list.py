@@ -38,6 +38,22 @@ class LinkedList:
         else:
             self.head = tempNode
 
+    # define a method that removes the first item of list
+    def removeFirst(self):
+        tempNode = self.head.next
+        self.head = tempNode
+
+    # define a method that removes the last item of list
+    def removeLast(self):
+        if self.head:
+            if self.head.next:
+                curr = self.head
+                while curr.next.next:
+                    curr = curr.next
+                curr.next = None
+            else:
+                self.head = None
+
 
 
 
@@ -46,6 +62,9 @@ llist.addLast(1)
 llist.addLast(2)
 llist.addLast(3)
 llist.addLast(4)
+llist.removeLast()
+llist.removeLast()
+llist.removeLast()
 llist.printNodes()
 
 
