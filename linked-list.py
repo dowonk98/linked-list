@@ -77,6 +77,19 @@ class LinkedList:
             return False
         return False
 
+    # define a method that replaces a value given its index
+    def replace(self, index, value):
+        if index == 0:
+            self.head.data = value
+        else:
+            i = 0
+            curr = self.head
+            while i < index:
+                curr = curr.next
+                i += 1
+            curr.data = value
+
+
 
 
 
@@ -94,6 +107,7 @@ llist.addLast(4)
 print(llist.size())
 print(llist.exists(1))
 print(llist.exists(5))
+llist.replace(2, 2)
 llist.printNodes()
 
 
