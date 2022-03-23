@@ -54,6 +54,29 @@ class LinkedList:
             else:
                 self.head = None
 
+    # define a method that gets the size of the linked list
+    def size(self):
+        if self.head:
+            counter = 0
+            curr = self.head
+            while (curr):
+                curr = curr.next
+                counter += 1
+            return counter
+        else:
+            return 0
+
+    # define a method that returns true if an item exists in linked list
+    def exists(self, value):
+        if self.head:
+            curr = self.head
+            while (curr):
+                if curr.data == value:
+                    return True
+                curr = curr.next
+            return False
+        return False
+
 
 
 
@@ -65,6 +88,12 @@ llist.addLast(4)
 llist.removeLast()
 llist.removeLast()
 llist.removeLast()
+llist.addLast(2)
+llist.addLast(3)
+llist.addLast(4)
+print(llist.size())
+print(llist.exists(1))
+print(llist.exists(5))
 llist.printNodes()
 
 
